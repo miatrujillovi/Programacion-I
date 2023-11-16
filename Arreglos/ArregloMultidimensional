@@ -1,0 +1,26 @@
+int main() {
+    
+    int Vectores[4][3], f;
+    
+    for(f = 0; f < 4; f++){
+        printf("Escriba los Datos del 1er Vector:\n");
+        scanf("%d", &Vectores[f][0]); 
+    }
+    
+    for(f = 0; f < 4; f++){
+        printf("Escriba los Datos del 2do Vector:\n");
+        scanf("%d", &Vectores[f][1]); 
+    }
+    
+    f = 0;
+    while(f<4){
+        Vectores[f][2] = Vectores[f][0] + Vectores[f][1];
+        f++;
+    }
+    
+    for(f = 0; f < 4; f++){
+        printf("%d", Vectores[f][2]);
+    }
+
+    return 0;
+}
