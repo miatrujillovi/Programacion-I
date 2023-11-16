@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main () {
+   int NumeroUno, NumeroDos;
+
+   printf("Dame el Primer Valor:\n");
+   scanf(%d,&NumeroUno);
+
+   printf("Dame el Segundo Valor:\n");
+   scanf(%d,&NumeroDos);
+
+   printf("El Resultado es: %d", NumeroUno + NumeroDos);
+
+return 0;
+}
