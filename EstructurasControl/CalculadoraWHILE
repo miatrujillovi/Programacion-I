@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main() {
+    
+    int Num1, Num2, CasoWhile, CasoSwitch;
+    
+    while (CasoWhile != 5) {
+        
+        printf("¿Qué Operación desea Realizar?\n");
+        scanf("%d", &CasoSwitch);
+
+        switch (CasoSwitch) {
+            case 1:
+                    printf("Introduzca el 1er Número:\n");
+                    scanf("%d", &Num1);
+                
+                    printf("Introduzca el 2do Número:\n");
+                    scanf("%d", &Num2);
+                    
+                    printf("El Resultado de la Suma es: %d\n", Num1 + Num2);
+                    break;
+            case 2:
+                    printf("Introduzca el 1er Número:\n");
+                    scanf("%d", &Num1);
+                
+                    printf("Introduzca el 2do Número:\n");
+                    scanf("%d", &Num2);
+                    
+                    printf("El Resultado de la Resta es: %d\n", Num1 - Num2);
+                    break;
+            case 3:
+                    printf("Introduzca el 1er Número:\n");
+                    scanf("%d", &Num1);
+                
+                    printf("Introduzca el 2do Número:\n");
+                    scanf("%d", &Num2);
+                    
+                    printf("El Resultado de la Multiplicación es: %d\n", Num1 * Num2);
+                    break;
+            case 4: 
+                    printf("Introduzca el 1er Número:\n");
+                    scanf("%d", &Num1);
+                
+                    printf("Introduzca el 2do Número:\n");
+                    scanf("%d", &Num2);
+                    
+                    printf("El Resultado de la División es: %d\n", Num1 / Num2);
+                    break;
+            case 5: 
+                    CasoWhile = 5;
+                    break;
+            default:
+                    printf ("Ha seleccionado un Caracter Inválido\n");
+                    break;
+        }
+    }
+
+    return 0;
+}
