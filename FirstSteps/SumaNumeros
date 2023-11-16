@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main () {
+   int NumeroUno, NumeroDos, ResultadoSuma;
+   NumeroUno = 10;
+   NumeroDos = 20;
+
+   ResultadoSuma = NumeroUno + NumeroDos;
+
+   printf("El Resultado es: %d", ResultadoSuma);
+
+return 0;
+}
