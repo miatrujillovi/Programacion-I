@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    
+    int Calificaciones[5], Promedio=0,x;
+    
+    for(x=0; x < 5; x++) { 
+       printf("Escriba la Calificación:\n");
+       scanf("%d", &Calificaciones[x]); 
+    }
+    
+    x = 0;
+    
+    while(x<5) {
+        Promedio += Calificaciones[x];
+        x++;
+    }
+        Promedio = Promedio/ 5;
+        
+    if(Promedio >= 6){
+        printf("%d", Promedio);
+    }
+
+    return 0;
+}
