@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+
+int main(){
+    
+    std::string Password;
+    std::string UserPassword;
+    
+    std::cout << "Escriba la contraseña que deseé: " << std::endl;
+    std::cin >> Password;
+    
+    do{
+        std::cout << "Introduzca su Contraseña: " << std::endl;
+        std::cin >> UserPassword;
+        
+        if(UserPassword==Password){
+            std::cout << "Ha Entrado Exitosamente" << std::endl;
+        } else {
+            std::cout << "La Contraseña es Incorrecta" << std::endl;
+        }
+        
+    }while(UserPassword != Password);
+    
+    return 0;
+}
