@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main () {
+   int Num1, Num2, Caso;
+
+   printf("Introduzca el 1er Número\n");
+   scanf("%d", &Num1);
+
+   printf("Introduzca el 2do Número\n");   
+   scanf("%d", &Num2);
+
+   printf("¿Qué Operación desea Realizar?\nIntroduzca 1 para Sumar\nIntroduzca 2 para Restar\nIntroduzca 3 para Multiplicar\nIntroduzca 4 para Dividir\n");
+   scanf("%d", &Caso);
+
+   switch (Caso) {
+      case 1:
+             printf("El Resultado de la Suma es: %d", Num1 + Num2);
+             break;
+      case 2:
+             printf("El Resultado de la Resta es: %d", Num1 - Num2);             
+             break;
+      case 3:
+             printf("El Resultado de la Multiplicación es: %d", Num1 * Num2);
+             break;
+      case 4: 
+             printf("El Resultado de la División es: %d", Num1 / Num2);
+             break;
+      default: 
+             printf("Ha Seleccionado un Número Inválido");
+             break;
+   }
+
+return 0;
+}
