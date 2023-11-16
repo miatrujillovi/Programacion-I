@@ -1,0 +1,129 @@
+#include <iostream>
+#include <string>
+
+// los TEMPLATES son una forma de generalizar los datos y hacer sobrecarga de funciones.
+template<class TIPO>
+void Print(TIPO a) {
+    std::cout << a << std::endl;
+}
+
+// Los Templates son parecidos a la Sobrecarga de Funciones en POO
+class Numeros {
+public:
+    // Se pueden "seleccionar" de dos maneras: con parametros y con la cantidad de variables existentes.
+    // Con Variables 
+    int Sumar (int a, int b) {
+        return a + b;
+    }
+    int Sumar (int a, int b, int c) {
+        return a + b + c;
+    }
+    
+    // Con Parametros
+    int Sumar (double a, double b) {
+        return a + b;
+    }
+};
+
+// Ejecucion de Encapsulamiento
+class Flores {
+public:
+    Flores (std::string Nombre) {
+        this->Nombre = Nombre;
+    }
+    
+private: 
+    std::string Nombre;
+    
+protected:
+    friend class Maceta;
+    virtual std::string getNombre() {
+        return this -> Nombre;
+    }
+};
+
+class Maceta {
+public:
+    std::string getNombre (Flores flores) {
+        return flores.getNombre();
+    }
+};
+
+// Ejecucion de Herencia
+class Carnivoras : public Flores {
+public: 
+    Carnivoras (std::string Nombre, std::string Tipo) : Flores (Nombre) {
+        this -> Tipo = Tipo;
+    }
+    
+    void DemostracionCarnivora () {
+        std::cout << "La Pinza es una flor Carnivora" << std::endl;
+    }
+
+private:
+    std::string Tipo;
+};
+
+// Ejecucion de Polimorfismo
+class Rosa : public Flores{
+public:
+    void CuidadoPlantas () {
+        std::cout << "Para cuidar de la rosa tiene que regar sus rosales en horas tempranas y a nivel de suelo para que las hojas y los tallos permanezcan secos." << std::endl;
+    }
+};
+class Bugambilia : public Flores{
+public:
+    void CuidadoPlantas () {
+        std::cout << "Para cuidar la bugambilia basta con regarla una vez por semana, evitnado mojar sus hojas." << std::endl;
+    }
+};
+
+
+
+// Demostraciones
+void DemostracionTemplate() {
+    Print<int>(10);
+    Print<float>(3764.12);
+    Print<std::string>("Esto es un String");
+    Print<double>(281728341);
+}
+
+void DemostracionSobrecarga() {
+    Numeros numeros;
+    std::cout << numeros.Sumar(1,2) << std::endl;
+    std::cout << numeros.Sumar(1,2,3) << std::endl;
+    std::cout << numeros.Sumar(2761827,2878342) << std::endl;
+}
+
+int main(){
+    
+    // Templates
+    std::cout << "TODOS los siguientes tipos de datos fueron sacados de una sola función con Plantillas \n" << std::endl;
+    DemostracionTemplate();
+    
+    // Sobrecarga de Funciones
+    std::cout << "Los siguientes numeros son resultados de Sumas hechas en Sobrecarga de Funciones \n" << std::endl;
+    DemostracionSobrecarga();
+
+    // Encapsulamiento
+    Flores Tulipan("Tulipan");
+    Maceta Circular;
+    std::cout << "El " << Circular.getNombre(Tulipan) << " esta en la maceta circular." << std::endl;
+    
+    // Herencia
+    Carnivoras Pinzas ("Pinzas", "Carnivora");
+    Pinzas.DemostracionCarnivora();
+    
+    // Polimorfismo
+    Flores Rosa ("Rosa");
+    Flores Bugambilia ("Bugambilia");
+    Rosa.CuidadoPlantas();
+    Bugambilia.CuidadoPlantas();
+    
+    /*Flores* rosa = new Rosa("Rosa");
+    Flores* bugambilia = new Bugambilia("Bugambilia");
+    rosa->CuidadoPlantas();
+    bugambilia->CuidadoPlantas();*/
+    
+    return 0;
+}
