@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main () {
+   int NumeroUno, NumeroDos;
+
+   printf("Introduce el Primer Valor:\n");
+   scanf(%d,&NumeroUno);
+
+   printf("Introduce el Segundo Valor:\n");
+   scanf(%d,&NumeroDos);
+
+   printf("El Resultado de la Suma es: %d", NumeroUno + NumeroDos);
+   printf("\nEl Resultado de la Resta es: %d", NumeroUno - NumeroDos);
+   printf("\nEl Resultado de la Multiplicación es: %d", NumeroUno * NumeroDos);
+   printf("\nEl Resultado de la División es: %d", NumeroUno / NumeroDos);
+   // La division falla debido a que nuestras variables son integer y el %f intenta declararlas como float, asi que lo dejamos como %d
+
+return 0;
+}
