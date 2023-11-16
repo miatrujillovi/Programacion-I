@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+
+struct Registro {
+    std::string Nombre, Ocupacion;
+    int Edad, Sueldo, TiempoR, AhorrosR, FuncionTiempoJubilacion, FuncionAhorrosJubilacion;
+};
+
+// Funcion de Jubilados
+void Jubilado (){
+    std::cout << "\nUsted ya esta jubilado";
+}
+
+// Función para calcular el tiempo restante de la jubilación
+int TiempoJubilacion (Registro Usuario) {
+    
+    Usuario.TiempoR = 60 - Usuario.Edad;
+    
+    if (Usuario.TiempoR <= 0) {
+        Jubilado();
+        return 0;
+    } 
+    
+    return Usuario.TiempoR;
+}
+
+// Función para calcular los ahorros estimado hasta la jubilación (16%)
+int AhorrosJubilacion (Registro Usuario) {
+    
+    Usuario.TiempoR = 60 - Usuario.Edad;
+    Usuario.AhorrosR = (Usuario.Sueldo * Usuario.TiempoR) * 0.16;
+    
+    if (Usuario.TiempoR <= 0) {
+        Jubilado();
+        return 0;
+    } 
+    
+    return Usuario.AhorrosR;
+
+}
+
+int main() {
+    
+    Registro Usuario;
+    
+    std::cout << "Escriba su Nombre: ";
+    std::cin >> Usuario.Nombre;
+    
+    std::cout << "Escriba su Edad: ";
+    std::cin >> Usuario.Edad;
+    
+    std::cout << "Escriba su Ocupación: ";
+    std::cin >> Usuario.Ocupacion;
+    
+    std::cout << "Escriba su Sueldo: ";
+    std::cin >> Usuario.Sueldo;
+    
+    // Llamada a función para tiempo restante antes de su jubilación
+    int FuncionTiempoJubilacion = TiempoJubilacion(Usuario);
+    std::cout << "Su tiempo restante para jubilarse es de: " << FuncionTiempoJubilacion;
+    
+    // Llamada a función para los ahorros que tendra antes de su jubilación
+    int FuncionAhorrosJubilacion = AhorrosJubilacion(Usuario);
+    std::cout << "\nSus ahorros restantes antes de la jubilación son: " << FuncionAhorrosJubilacion;
+
+    return 0;
+}
