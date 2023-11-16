@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main () {
+
+   // int para enteros y float para decimales, ambos funcionarian en este caso pero se decidio usar int por simplicidad
+   int Calificacion1, Calificacion2, Calificacion3, Calificacion4, Calificacion5, Promedio;
+
+   printf("Escriba su 1ra Calificación:\n");
+   scanf("%d", &Calificacion1);
+
+   printf("Escriba su 2da Calificación:\n");
+   scanf("%d", &Calificacion2);
+
+   printf("Escriba su 3ra Calificación:\n");
+   scanf("%d", &Calificacion3);
+
+   printf("Escriba su 4ta Calificación:\n");
+   scanf("%d", &Calificacion4);
+
+   printf("Escriba su 5ta Calificación:\n");
+   scanf("%d", &Calificacion5);
+
+   Promedio = (Calificacion1 + Calificacion2 + Calificacion3 + Calificacion4 + Calificacion5) / 5;
+
+   if (Promedio >= 6 && Promedio >= 9) {
+      printf("\n\nEs un Alumno de Excelencia!");
+   /* Este Else es opcional, el original solo te dice si aprobaste pero sino, nada
+   } else { 
+      printf("\n\nHa Reprobado la Materia");
+   }*/
+
+   return 0;
+}
