@@ -1,0 +1,29 @@
+#include <iostream>
+
+int Pedir(){
+    int a;
+    std::cout << "Escriba la calificación:\n" << std::endl;
+    std::cin >> a;
+    
+return a;
+}
+
+int main () {
+    
+   int Promedio, a[5];
+   
+   for(int i = 0; i < 5; i++){
+       a[i] = Pedir();
+       Promedio += a[i];
+   }
+
+   Promedio = Promedio / 5;
+
+   if (Promedio >= 6) {
+      std::cout << "\n\nHa Aprobado la Materia" << std::endl;
+   } else { 
+      std::cout << "\n\nHa Reprobado la Materia" << std::endl;
+   }
+
+   return 0;
+}
