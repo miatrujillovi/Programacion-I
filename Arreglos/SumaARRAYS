@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    
+    int Vector1[4], Vector2[4], Resultado[4], i;
+    
+    for(i = 0; i < 4; i++){
+        printf("Escriba los Datos del 1er Vector:\n");
+        scanf("%d", &Vector1[i]);    
+    }
+    
+    for(i = 0; i < 4; i++){
+        printf("Escriba los Datos del 2do Vector:\n");
+        scanf("%d", &Vector2[i]);    
+    }
+    
+    i = 0;
+    while(i<4) {
+        Resultado[i] = Vector1[i] + Vector2[i];
+        i++;
+    }
+    
+    i = 0;
+    while (i<4) {
+        printf("%d", Resultado[i]);
+        i++;
+    }
+
+    return 0;
+}
