@@ -1,0 +1,122 @@
+#include <iostream>
+#include <string>
+
+class Animal{
+// Las Funciones son conocidas como Métodos.
+//Atributos Publicos: TODOS pueden acceder
+public:
+    Animal(std::string Nombre){
+				//Parámetros a recibir y guardar en sus variables.
+        this->Nombre = Nombre;
+				// this = guarda esto en esta variable.
+    }
+
+    // Void no regresa nada a diferencia de int o etc
+		void AnimalComiendo(){
+        std::cout << "El animal esta comiendo" << std::endl;
+    }
+    
+    //POLIMORFISMO
+    void Sonido(){
+        std::cout << "Los animales hacen sonidos." << std::endl;
+    }
+    
+// Atributos Privados: Solo pueden acceder ellos mismos, no se pueden hacer cambios.
+private:
+    std::string Nombre;
+
+// Atributos Protegidos: Solo ciertas clases pueden acceder (friend class Amigo;)
+protected:
+    // ENCAPSULAMIENTO
+    friend class Amigo;
+    virtual std::string getNombre() {
+        return this -> Nombre;
+    }
+
+};
+
+// POLIMORFISMO
+class Gato : public Animal {
+public:
+    void Sonido() {
+        std::cout << "Los gatos hacen Miau." << std::endl;
+    }
+};
+
+class Perro : public Animal {
+    void Sonido() {
+        std::cout << "Los perros hacen Guau." << std::endl;
+    }
+};
+
+// HERENCIA
+class Felinos : public Animal{
+public:
+    Felinos(std::string Nombre, std::string Tipo) : Animal(Nombre){
+        this -> Tipo = Tipo;
+    }
+    
+    void ActividadesFelinas(){
+        std::cout << "El leon ronronean." << std::endl;
+    }
+    
+private:
+    std::string Tipo;
+
+protected:
+
+};
+
+// ENCAPSULAMIENTO
+class Amigo{
+public:
+    std::string getNombre(Animal animal){
+        return animal.getNombre();
+    }
+};
+
+// SOBRECARGA DE FUNCIONES
+class CantidadAnimales{
+public: 
+    int Suma(int Djur1, int Djur2) {
+        return Djur1 + Djur2;
+    }
+    int Suma (int Djur1, int Djur2, int Djur3) {
+        return Djur1 + Djur2 + Djur3;
+    }
+    int Suma (int Djur1, int Djur2, int Djur3, int Djur4) {
+        return Djur1 + Djur2 + Djur3 + Djur4;
+    }
+};
+
+
+int main(){
+    Animal Gato("Gato");
+    Animal Perro("Perro");
+    Animal Morsa("Morsa");
+    Animal Pinguino("Pinguino");
+    Gato.AnimalComiendo();
+    
+    // Herencia
+    Felinos Leon("Salvaje", "Leon");
+    Leon.ActividadesFelinas();
+    
+    // Encapsulamiento
+    Amigo Oso;
+    std::cout << Oso.getNombre(Morsa) << std::endl;
+    
+    //Polimorfismo
+    Animal gato("Gato");
+    Gato.Sonido();
+    
+    Animal perro("Perro");
+    Perro.Sonido();
+    
+    // Sobrecarga de Funciones
+    CantidadAnimales cantidadanimales;
+    std::cout << cantidadanimales.Suma(1,2) << std:: endl;
+    std::cout << cantidadanimales.Suma(1,2,3) << std:: endl;
+    std::cout << cantidadanimales.Suma(1,2,3,4) << std:: endl;
+    
+    return 0;
+}
