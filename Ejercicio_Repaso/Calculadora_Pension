@@ -7,12 +7,12 @@ struct Registro {
 };
 
 // Funcion de Jubilados
-void Jubilado (){
+void Jubilado() {
     std::cout << "\nUsted ya esta jubilado";
 }
 
 // Función para calcular el tiempo restante de la jubilación
-int TiempoJubilacion (Registro Usuario) {
+int TiempoJubilacion(Registro Usuario) {
     
     Usuario.TiempoR = 60 - Usuario.Edad;
     
@@ -25,7 +25,7 @@ int TiempoJubilacion (Registro Usuario) {
 }
 
 // Función para calcular los ahorros estimado hasta la jubilación (16%)
-int AhorrosJubilacion (Registro Usuario) {
+int AhorrosJubilacion(Registro Usuario) {
     
     Usuario.TiempoR = 60 - Usuario.Edad;
     Usuario.AhorrosR = (Usuario.Sueldo * Usuario.TiempoR) * 0.16;
@@ -39,10 +39,8 @@ int AhorrosJubilacion (Registro Usuario) {
 
 }
 
-int main() {
-    
-    Registro Usuario;
-    
+// Función para Pedir Datos
+void PedirDatos(Registro& Usuario) {
     std::cout << "Escriba su Nombre: ";
     std::cin >> Usuario.Nombre;
     
@@ -54,6 +52,12 @@ int main() {
     
     std::cout << "Escriba su Sueldo: ";
     std::cin >> Usuario.Sueldo;
+}
+
+int main() {
+    Registro Usuario;
+
+    PedirDatos(Usuario);
     
     // Llamada a función para tiempo restante antes de su jubilación
     int FuncionTiempoJubilacion = TiempoJubilacion(Usuario);
