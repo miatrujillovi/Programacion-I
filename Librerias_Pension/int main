@@ -1,0 +1,18 @@
+#include <iostream>
+#include "CALCULADORA_PENSION_H"
+
+int main() {
+    Registro Usuario;
+
+    PedirDatos(Usuario);
+    
+    // Llamada a función para tiempo restante antes de su jubilación
+    int FuncionTiempoJubilacion = TiempoJubilacion(Usuario);
+    std::cout << "Su tiempo restante para jubilarse es de: " << FuncionTiempoJubilacion;
+    
+    // Llamada a función para los ahorros que tendra antes de su jubilación
+    int FuncionAhorrosJubilacion = AhorrosJubilacion(Usuario);
+    std::cout << "\nSus ahorros restantes antes de la jubilación son: " << FuncionAhorrosJubilacion;
+
+    return 0;
+}
