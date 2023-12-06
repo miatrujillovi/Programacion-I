@@ -78,7 +78,7 @@ public:
         std::cin >> this->ConstructionYear;
         std::cout << "Dirección: ";
         std::cin >> this->Direccion;
-        std::cout << "------ POLIZA DE CASA ------" << std::endl << "| Datos Generales |" << std::endl << "Nombre Completo: " << Nombre << std::endl << "CURP: " << CURP << std::endl << "Día de Nacimiento: " << DayBirth << std::endl << "Edad: " << YearBirth;
+        std::cout << "------ POLIZA DE CASA ------" << std::endl << "| Datos Generales |" << std::endl << "Nombre Completo: " << Nombre << std::endl << "CURP: " << CURP << std::endl << "Día de Nacimiento: " << DayBirth << std::endl << "Edad: " << YearBirth << "El Monto Máximo que se le va a otorgar es de: " << MontoMax << std::endl << "Su Deducible Final será de: " << Deducible;
         std::cout << "| Datos de la Casa |" << std::endl << "Tamaño de la Casa: " << HouseLength << std::endl << "Año de Construcción de la Casa: " << ConstructionYear << std::endl << "Dirección de la Casa: " << Direccion;
         std::cout << "----------------------------" << std::endl << "¡Su Poliza de Casa se ha creado exitosamente!";
         exit (0);
@@ -128,7 +128,7 @@ public:
         std::cin >> this->Enfermo;
         std::cout << "Tipo de sangre: ";
         std::cin >> this->BloodType;
-        std::cout << "------ POLIZA DE VIDA ------" << std::endl << "| Datos Generales |" << std::endl << "Nombre Completo: " << Nombre << std::endl << "CURP: " << CURP << std::endl << "Día de Nacimiento: " << DayBirth << std::endl << "Edad: " << YearBirth;
+        std::cout << "------ POLIZA DE VIDA ------" << std::endl << "| Datos Generales |" << std::endl << "Nombre Completo: " << Nombre << std::endl << "CURP: " << CURP << std::endl << "Día de Nacimiento: " << DayBirth << std::endl << "Edad: " << YearBirth << "El Monto Máximo que se le va a otorgar es de: " << MontoMax << std::endl << "Su Deducible Final será de: " << Deducible;
         std::cout << "| Datos del Paciente |" << std::endl << "¿Esta enfermo?: " << Enfermo << std::endl << "Tipo de Sangre del Paciente: " << BloodType;
         std::cout << "----------------------------" << std::endl << "¡Su Poliza de Vida se ha creado exitosamente!";
         exit (0);
@@ -181,7 +181,7 @@ public:
         std::cin >> this->SeriesNumber;
         std::cout << "Color: ";
         std::cin >> this->Color;
-        std::cout << "------ POLIZA DE CARRO ------" << std::endl << "| Datos Generales |" << std::endl << "Nombre Completo: " << Nombre << std::endl << "CURP: " << CURP << std::endl << "Día de Nacimiento: " << DayBirth << std::endl << "Edad: " << YearBirth;
+        std::cout << "------ POLIZA DE CARRO ------" << std::endl << "| Datos Generales |" << std::endl << "Nombre Completo: " << Nombre << std::endl << "CURP: " << CURP << std::endl << "Día de Nacimiento: " << DayBirth << std::endl << "Edad: " << YearBirth << "El Monto Máximo que se le va a otorgar es de: " << MontoMax << std::endl << "Su Deducible Final será de: " << Deducible;
         std::cout << "| Datos del Vehiculo |" << std::endl << "Año de Salida del Carro: " << YearCar << std::endl << "Kilometraje Actual del Carro: " << Kilometraje << std::endl << "Modelo del Carro:  " << Modelo << std::endl << "Marca del Carro: " << Marca << std::endl << "Placa del Vehiculo: " << Placa << std::endl << "Número de Serie del Vehiculo: " << SeriesNumber << std::endl << "Color del Carro: " << Color;
         std::cout << "----------------------------" << std::endl << "¡Su Poliza de Carro se ha creado exitosamente!";
         exit (0);
