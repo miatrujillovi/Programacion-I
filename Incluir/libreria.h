@@ -48,23 +48,12 @@ public:
         return this->YearBirth;
     }
 
-    void setData(){
-        std::cout << "¡Hoy lo apoyaremos en la creación de su poliza! Escriba su nombre completo: ";
-        std::cin >> this -> Nombre;
-        std::cout << "Ahora, necesitaremos su CURP: ";
-        std::cin >> this -> CURP;
-        std::cout << "También introduzca su día y mes de nacimiento (Ej. 10 de Noviembre): ";
-        std::cin >> this -> DayBirth;
-        std::cout << "Y por último, su año de nacimiento: ";
-        std::cin >> this -> YearBirth;
-        getData();
-    }
     void getData(){
         std::cout << "!Ha registrado sus datos correctamente! Aquí esta su perfil: ";
         std::cout << Nombre << std::endl << CURP << std::endl << DayBirth << std::endl << Edad << std::endl << MontoMax << std::endl << Deducible;
     }
 
-private:
+protected:
     std::string Nombre;
     std::string CURP;
     std::string DayBirth;
@@ -74,14 +63,24 @@ private:
     int MontoMax;
 };
 
-class PolizaCasa : public Poliza{
+class PolizaCasa : Poliza{
 public:
-    PolizaCasa(){};
-    PolizaCasa(int houselength, int constructionyear, std::string direccion, std::string nombre, std::string curp, std::string daybirth, int yearbirth, int edad, int deducible, int montomax) : Poliza(std::string nombre, std::string curp, std::string daybirth, int yearbirth, int edad, int deducible, int montomax){
-        this->HouseLength = houselength;
-        this->ConstructionYear = constructionyear;
-        this->Direccion = direccion;
-    }
+    PolizaCasa(){
+        std::cout << "¡Hoy lo apoyaremos en la creación de su poliza! Por favor escriba los datos que se le pidan: " << std::endl << "Nombre Completo: ";
+        std::cin >> this -> Nombre;
+        std::cout << "CURP: ";
+        std::cin >> this -> CURP;
+        std::cout << "Día y Fecha de Nacimiento (Ej. 10 de Noviembre): ";
+        std::cin >> this -> DayBirth;
+        std::cout << "Año de Nacimiento: ";
+        std::cin >> this -> YearBirth;
+        std::cout << "Tamaño de la Casa: ";
+        std::cin >> this->HouseLength;
+        std::cout << "Año de Construcción: ";
+        std::cin >> this->ConstructionYear;
+        std::cout << "Dirección: ";
+        std::cin >> this->Direccion;
+    };
 
     //Setters
     void setHouseLength(int houselength){
@@ -105,17 +104,6 @@ public:
         return this->Direccion;
     }
 
-    void setData(){
-        std::cout << "Ha seleccionado crear su Poliza de Casa, sin embargo, necesitaremos algunos datos más..." << std::endl;
-        std::cout << "Escriba el tamaño de su hogar: ";
-        std::cin >> this->HouseLength;
-        std::cout << "Escriba el año de construcción de su hogar: ";
-        std::cin >> this->ConstructionYear;
-        std::cout << "Y por último, escriba su dirección: ";
-        std::cin >> this->Direccion;
-        getData();
-    }
-
     void getData(){
         std::cout << "¡Se ha creado exitosamente su poliza de casa! Aquí estan los datos que ingreso: ";
         std::cout << "El tamaño de la casa es de: " << HouseLength << std::endl << "El año de contrucción del hogar es de: " << ConstructionYear << std::endl << Direccion;
@@ -127,13 +115,22 @@ private:
     std::string Direccion;
 };
 
-class PolizaVida : public Poliza{
+class PolizaVida : Poliza{
 public:
-    PolizaVida(){};
-    PolizaVida(bool enfermo, std::string bloodtype, std::string nombre, std::string curp, std::string daybirth, int yearbirth, int edad, int deducible, int montomax):Poliza(std::string nombre, std::string curp, std::string daybirth, int yearbirth, int edad, int deducible, int montomax){
-        this->Enfermo = enfermo;
-        this->BloodType = bloodtype;
-    }
+    PolizaVida(){
+        std::cout << "¡Hoy lo apoyaremos en la creación de su poliza! Por favor escriba los datos que se le pidan: " << std::endl << "Nombre Completo: ";
+        std::cin >> this -> Nombre;
+        std::cout << "CURP: ";
+        std::cin >> this -> CURP;
+        std::cout << "Día y Fecha de Nacimiento (Ej. 10 de Noviembre): ";
+        std::cin >> this -> DayBirth;
+        std::cout << "Año de Nacimiento: ";
+        std::cin >> this -> YearBirth;
+        std::cout << "¿Se encuentra enfermo?: ";
+        std::cin >> this->Enfermo;
+        std::cout << "Tipo de sangre: ";
+        std::cin >> this->BloodType;
+    };
 
     //Setters
     void setEnfermo(bool enfermo){
@@ -151,15 +148,6 @@ public:
         return this->BloodType;
     }
 
-    void setData(){
-        std::cout << "Ha seleccionado crear su Poliza de Vida, sin embargo, necesitaremos algunos datos más..." << std::endl;
-        std::cout << "¿Se encuentra enfermo?: ";
-        std::cin >> this->Enfermo;
-        std::cout << "Escriba su tipo de sangre: ";
-        std::cin >> this->BloodType;
-        getData();
-    }
-
     void getData(){
         std::cout << "¡Se ha creado exitosamente su poliza de vida! Aquí estan los datos que ingreso: ";
         std::cout << "¿Se encuentra enfermo?" << Enfermo << std::endl << "Tipo de Sangre: " << BloodType << std::endl;
@@ -170,18 +158,32 @@ private:
     std::string BloodType;
 };
 
-class PolizaCarro : public Poliza{
+class PolizaCarro : Poliza{
 public:
-    PolizaCarro(){};
-    PolizaCarro(int yearcar, int kilometraje, std::string modelo, std::string marca, std::string placa, int seriesnumber, std::string color, std::string nombre, std::string curp, std::string daybirth, int yearbirth, int edad, int deducible, int montomax):Poliza(std::string nombre, std::string curp, std::string daybirth, int yearbirth, int edad, int deducible, int montomax){
-        this->YearCar = yearcar;
-        this->Kilometraje = kilometraje;
-        this->Modelo = modelo;
-        this->Marca = marca;
-        this->Placa = placa;
-        this->SeriesNumber = seriesnumber;
-        this->Color = color;
-    }
+    PolizaCarro(){
+        std::cout << "¡Hoy lo apoyaremos en la creación de su poliza! Por favor escriba los datos que se le pidan: " << std::endl << "Nombre Completo: ";
+        std::cin >> this -> Nombre;
+        std::cout << "CURP: ";
+        std::cin >> this -> CURP;
+        std::cout << "Día y Fecha de Nacimiento (Ej. 10 de Noviembre): ";
+        std::cin >> this -> DayBirth;
+        std::cout << "Año de Nacimiento: ";
+        std::cin >> this -> YearBirth;
+        std::cout << "Año del Carro: ";
+        std::cin >> this->YearCar;
+        std::cout << "Kilometraje Actual: ";
+        std::cin >> this->Kilometraje;
+        std::cout << "Modelo: ";
+        std::cin >> this->Modelo;
+        std::cout << "Marca: ";
+        std::cin >> this->Marca;
+        std::cout << "Placa: ";
+        std::cin >> this->Placa;
+        std::cout << "Número de Serie: ";
+        std::cin >> this->SeriesNumber;
+        std::cout << "Color: ";
+        std::cin >> this->Color;
+    };
 
     //Setters
     void setYearCar(int yearcar){
@@ -229,25 +231,6 @@ public:
         return this->Color;
     }
 
-    void setData(){
-        std::cout << "Ha seleccionado crear su Poliza de Carro, sin embargo, necesitaremos algunos datos más..." << std::endl;
-        std::cout << "Escriba el año del carro: ";
-        std::cin >> this->YearCar;
-        std::cout << "Escriba el kilometraje actual del carro: ";
-        std::cin >> this->Kilometraje;
-        std::cout << "Escriba el modelo del carro: ";
-        std::cin >> this->Modelo;
-        std::cout << "Escriba la marca del carro: ";
-        std::cin >> this->Marca;
-        std::cout << "Escriba la placa del carro: ";
-        std::cin >> this->Placa;
-        std::cout << "Escriba el número de serie: ";
-        std::cin >> this->SeriesNumber;
-        std::cout << "Escriba el color del carro: ";
-        std::cin >> this->Color;
-        getData();
-    }
-
     void getData(){
         std::cout << "¡Se ha creado exitosamente su poliza de carro! Aquí estan los datos que ingreso: ";
         std::cout << "El año de su carro es: " << YearCar << std::endl << "Su kilometraje es de: " << Kilometraje << std::endl << Modelo << std::endl << Marca << std::endl << "Su placa es: " << Placa << std::endl << "Número de serie: " << SeriesNumber << std::endl << Color;
@@ -261,7 +244,6 @@ private:
     std::string Marca;
     std::string Placa;
     std::string Color;
-
 };
 
 #endif
