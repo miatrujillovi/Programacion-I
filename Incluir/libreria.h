@@ -9,7 +9,9 @@
 
 class Poliza{
 public:
+    // Constructor Implicito
     Poliza(){};
+    // Constructor Explicito
     Poliza(std::string nombre, std::string curp, std::string daybirth, int yearbirth, int edad, int deducible, int montomax){
         this->Nombre = nombre;
         this->CURP = curp;
@@ -48,11 +50,6 @@ public:
         return this->YearBirth;
     }
 
-    void getData(){
-        std::cout << "!Ha registrado sus datos correctamente! Aquí esta su perfil: ";
-        std::cout << Nombre << std::endl << CURP << std::endl << DayBirth << std::endl << Edad << std::endl << MontoMax << std::endl << Deducible;
-    }
-
 protected:
     std::string Nombre;
     std::string CURP;
@@ -65,6 +62,7 @@ protected:
 
 class PolizaCasa : Poliza{
 public:
+    // Constructor Implicito
     PolizaCasa(){
         std::cout << "¡Hoy lo apoyaremos en la creación de su poliza! Por favor escriba los datos que se le pidan: " << std::endl << "Nombre Completo: ";
         std::cin >> this -> Nombre;
@@ -80,6 +78,9 @@ public:
         std::cin >> this->ConstructionYear;
         std::cout << "Dirección: ";
         std::cin >> this->Direccion;
+        std::cout << "------ POLIZA DE CASA ------" << std::endl << "| Datos Generales |" << std::endl << "Nombre Completo: " << Nombre << std::endl << "CURP: " << CURP << std::endl << "Día de Nacimiento: " << DayBirth << std::endl << "Edad: " << YearBirth;
+        std::cout << "| Datos de la Casa |" << std::endl << "Tamaño de la Casa: " << HouseLength << std::endl << "Año de Construcción de la Casa: " << ConstructionYear << std::endl << "Dirección de la Casa: " << Direccion;
+        std::cout << "----------------------------" << std::endl << "¡Su Poliza de Casa se ha creado exitosamente!";
     };
 
     //Setters
@@ -104,11 +105,6 @@ public:
         return this->Direccion;
     }
 
-    void getData(){
-        std::cout << "¡Se ha creado exitosamente su poliza de casa! Aquí estan los datos que ingreso: ";
-        std::cout << "El tamaño de la casa es de: " << HouseLength << std::endl << "El año de contrucción del hogar es de: " << ConstructionYear << std::endl << Direccion;
-    }
-
 private:
     int HouseLength;
     int ConstructionYear;
@@ -117,6 +113,7 @@ private:
 
 class PolizaVida : Poliza{
 public:
+    // Constructor Implicito
     PolizaVida(){
         std::cout << "¡Hoy lo apoyaremos en la creación de su poliza! Por favor escriba los datos que se le pidan: " << std::endl << "Nombre Completo: ";
         std::cin >> this -> Nombre;
@@ -130,6 +127,9 @@ public:
         std::cin >> this->Enfermo;
         std::cout << "Tipo de sangre: ";
         std::cin >> this->BloodType;
+        std::cout << "------ POLIZA DE VIDA ------" << std::endl << "| Datos Generales |" << std::endl << "Nombre Completo: " << Nombre << std::endl << "CURP: " << CURP << std::endl << "Día de Nacimiento: " << DayBirth << std::endl << "Edad: " << YearBirth;
+        std::cout << "| Datos del Paciente |" << std::endl << "¿Esta enfermo?: " << Enfermo << std::endl << "Tipo de Sangre del Paciente: " << BloodType;
+        std::cout << "----------------------------" << std::endl << "¡Su Poliza de Vida se ha creado exitosamente!";
     };
 
     //Setters
@@ -148,11 +148,6 @@ public:
         return this->BloodType;
     }
 
-    void getData(){
-        std::cout << "¡Se ha creado exitosamente su poliza de vida! Aquí estan los datos que ingreso: ";
-        std::cout << "¿Se encuentra enfermo?" << Enfermo << std::endl << "Tipo de Sangre: " << BloodType << std::endl;
-    }
-
 private:
     bool Enfermo;
     std::string BloodType;
@@ -160,6 +155,7 @@ private:
 
 class PolizaCarro : Poliza{
 public:
+    // Constructor Implicito
     PolizaCarro(){
         std::cout << "¡Hoy lo apoyaremos en la creación de su poliza! Por favor escriba los datos que se le pidan: " << std::endl << "Nombre Completo: ";
         std::cin >> this -> Nombre;
@@ -183,6 +179,9 @@ public:
         std::cin >> this->SeriesNumber;
         std::cout << "Color: ";
         std::cin >> this->Color;
+        std::cout << "------ POLIZA DE CARRO ------" << std::endl << "| Datos Generales |" << std::endl << "Nombre Completo: " << Nombre << std::endl << "CURP: " << CURP << std::endl << "Día de Nacimiento: " << DayBirth << std::endl << "Edad: " << YearBirth;
+        std::cout << "| Datos del Vehiculo |" << std::endl << "Año de Salida del Carro: " << YearCar << std::endl << "Kilometraje Actual del Carro: " << Kilometraje << std::endl << "Modelo del Carro:  " << Modelo << std::endl << "Marca del Carro: " << Marca << std::endl << "Placa del Vehiculo: " << Placa << std::endl << "Número de Serie del Vehiculo: " << SeriesNumber << std::endl << "Color del Carro: " << Color;
+        std::cout << "----------------------------" << std::endl << "¡Su Poliza de Carro se ha creado exitosamente!";
     };
 
     //Setters
@@ -229,11 +228,6 @@ public:
     }
     std::string getColor(){
         return this->Color;
-    }
-
-    void getData(){
-        std::cout << "¡Se ha creado exitosamente su poliza de carro! Aquí estan los datos que ingreso: ";
-        std::cout << "El año de su carro es: " << YearCar << std::endl << "Su kilometraje es de: " << Kilometraje << std::endl << Modelo << std::endl << Marca << std::endl << "Su placa es: " << Placa << std::endl << "Número de serie: " << SeriesNumber << std::endl << Color;
     }
 
 private:
