@@ -2,6 +2,7 @@
 // Created by Mia Trujillo on 29/11/2023.
 //
 #include <iostream>
+#include <variant>
 #include "libreria.h"
 
 std::variant<PolizaCasa, PolizaVida, PolizaCarro> Menu(){
@@ -13,20 +14,23 @@ std::variant<PolizaCasa, PolizaVida, PolizaCarro> Menu(){
     std::cin >> Servicios;
 
     switch (Servicios) {
-        case 1:
+        case 1:{
             PolizaCasa Casa;
             return Casa;
+        }
             break;
-        case 2:
+        case 2:{
             PolizaVida Vida;
             return Vida;
+        }
             break;
-        case 3:
+        case 3:{
             PolizaCarro Carro;
             return Carro;
+        }
             break;
         default:
-            return 0;
+            exit (0);
             break;
     }
 }
