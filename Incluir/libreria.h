@@ -171,6 +171,7 @@ private:
 };
 
 class PolizaCarro : public Poliza{
+public:
     PolizaCarro(){};
     PolizaCarro(int yearcar, int kilometraje, std::string modelo, std::string marca, std::string placa, int seriesnumber, std::string color, std::string nombre, std::string curp, std::string daybirth, int yearbirth, int edad, int deducible, int montomax):Poliza(std::string nombre, std::string curp, std::string daybirth, int yearbirth, int edad, int deducible, int montomax){
         this->YearCar = yearcar;

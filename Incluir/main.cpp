@@ -14,13 +14,16 @@ int Menu(){
 
     switch (Servicios) {
         case 1:
-            PolizaCasa.setData();
+            PolizaCasa Casa;
+            return *Casa.setData();
             break;
         case 2:
-            PolizaVida.setData();
+            PolizaVida Vida;
+            Vida.setData();
             break;
         case 3:
-            PolizaCarro.setData();
+            PolizaCarro Carro;
+            Carro.setData();
             break;
         default:
             return 0;
@@ -30,7 +33,6 @@ int Menu(){
 
 int main(){
 
-    Poliza.setData();
     Menu();
 
     return 0;
